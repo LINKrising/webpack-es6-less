@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>index</title>
+</head>
+<body>
+	<h2>index</h2>
+  	<% for(var k in htmlWebpackPlugin.files.chunks){%>
+      <% if(k) {%>
+        <script type="text/javascript" src="<%=
+        htmlWebpackPlugin.files.chunks[k].entry %>"></script>
+      <% } %>
+    <% } %>
+</body>
+</html>

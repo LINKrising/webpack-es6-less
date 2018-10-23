@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="uft-8">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+
+
+
+  </head>
+
+  <body>
+
+  <h2>other</h2>
+  	<% for(var k in htmlWebpackPlugin.files.chunks){%>
+      <% if(k) {%>
+        <script type="text/javascript" src="<%=
+        htmlWebpackPlugin.files.chunks[k].entry %>"></script>
+      <% } %>
+    <% } %>
+  </body>
+
+</html>

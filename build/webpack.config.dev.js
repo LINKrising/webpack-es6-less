@@ -5,7 +5,10 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: config.mainJs, //已多次提及的唯一入口文件
+    entry: {
+        mainJs: config.otherJs,
+        otherJs: config.otherJs
+    }, //已多次提及的唯一入口文件
     output: {
         path: config.path, //打包后的文件存放的地方
         filename: config.jsPath //打包后输出文件的文件名

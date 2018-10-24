@@ -6,7 +6,7 @@ const htmlWebpackPlugin = require('html-webpack-plugin');
  
 module.exports = {
     entry: {
-        mainJs:"./app/main.js",
+        mainJs:config.otherJs,
         otherJs:config.otherJs
     }, //已多次提及的唯一入口文件
     output: {
@@ -87,11 +87,11 @@ module.exports = {
         //css文件配置
         new ExtractTextPlugin(config.cssPath),
         new htmlWebpackPlugin({
-                //模板为同级目录下的index.html，为何不用写路径，是因为默认上下文问webpack.config.js所在的文件夹
-                    template:'src/view/index.html',
-                    filename:'index.html',
-                    // inject:false,
-                    chunks:['mainJs']
+        //模板为同级目录下的index.html，为何不用写路径，是因为默认上下文问webpack.config.js所在的文件夹
+            template:'src/view/index.html',
+            filename:'index.html',
+            // inject:false,
+            chunks:['mainJs']
             }),
         new htmlWebpackPlugin({
         //模板为同级目录下的index.html，为何不用写路径，是因为默认上下文问webpack.config.js所在的文件夹
